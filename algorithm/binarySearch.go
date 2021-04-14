@@ -21,16 +21,15 @@ func searchValue(arr []int, value, low, high int) int {
 		return -1
 	}
 
-	key := -1
 	mid :=  low + (high - low) / 2 // 此处注意需要加上low，low不一定是0所以需要加上已排除的数量
 	if value < arr[mid] {
-		key = searchValue(arr, value, low, mid - 1)
+		return searchValue(arr, value, low, mid - 1)
 	} else if value > arr[mid] {
-		key = searchValue(arr, value, mid + 1, high)
+		return searchValue(arr, value, mid + 1, high)
 	} else {
-		key = mid
+		 return mid
 	}
-	return key
+	return -1
 }
 
 // 循环条件实现二分查找
@@ -42,9 +41,7 @@ func BinarySearch(arr []int, value int) int {
 	sort.Slice(arr, func(i, j int) bool { // 二分查找法需要在有序的条件下进行
 		return i < j
 	})
-	key := -1
-	low := 0
-	high := len(arr) - 1
+	low, high := 0, len(arr) - 1
 	for low <= high {
 		mid := low + (high - low) / 2
 		if value < arr[mid] {
@@ -52,9 +49,8 @@ func BinarySearch(arr []int, value int) int {
 		} else if value > arr[mid] {
 			low = mid + 1
 		} else {
-			key = mid
-			break
+			return mid
 		}
 	}
-	return key
+	return -1
 }
