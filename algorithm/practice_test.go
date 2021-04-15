@@ -11,3 +11,9 @@ func TestReversalArray(t *testing.T)  {
 	reversalArray(arr)
 	fmt.Println("after reversal array = ", arr)
 }
+
+func TestFib(t *testing.T)  {
+	i := 2
+	result := fib(i)
+	fmt.Printf("fib(%d) = %d\n", i, result)
+}
