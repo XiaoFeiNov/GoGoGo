@@ -17,15 +17,10 @@ func main()  {
 	h := new(hand)
 	http.Handle("", h)
 	http.HandleFunc("/", handle)
-
-	http.HandleFunc("/", handle)
-
-	http.HandleFunc("/", handle)
-
 	log.Fatal(http.ListenAndServe(":10086", nil))
 }
 
-func handle(w http.ResponseWriter, req *http.Request)  {
+func handle(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("w: ", w)
 	fmt.Println("Method: ", req.Method)
 	fmt.Println("URL: ", req.URL)
