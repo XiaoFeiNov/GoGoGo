@@ -1,5 +1,7 @@
 package mySort
 
+// 冒泡、插入、选择排序平均时间复杂度都是n^2
+// 冒泡排序，稳定的排序算法，适合n较小的情况
 func bubbleSort(arr []int) {
 	n := len(arr)
 	for i := 0; i < n - 1; i++ {
@@ -11,6 +13,7 @@ func bubbleSort(arr []int) {
 	}
 }
 
+// 插入排序，稳定的排序算法，适合n较小的情况
 func insertSort(arr []int) {
 	n := len(arr)
 	for i := 0; i < n - 1; i++ {
@@ -22,6 +25,7 @@ func insertSort(arr []int) {
 	}
 }
 
+// 选择排序，不稳定的排序算法（如：A 50, B 50, C 100，排序后为CBA），适合n较小的情况
 func selectionSort(arr []int) {
 	n := len(arr)
 	for i := 0; i < n - 1; i++ {
